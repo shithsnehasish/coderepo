@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		">
+
+	<context:property-placeholder location="classpath:persistence-mysql.properties" />
+
+	<context:component-scan base-package="com.dell.coe.estimation" />
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<beans:bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<beans:property name="driverClassName" value="${db.driverClassName}" />
+		<beans:property name="url" value="${db.url}" />
+		<beans:property name="username" value="${db.username}" />
+		<beans:property name="password" value="${db.password}" />
+	</beans:bean>
+
+	<!-- Hibernate 4 Annotation SessionFactory Bean definition -->
+	<beans:bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<beans:property name="dataSource" ref="dataSource" />
+		<!-- annotated source files <beans:property name="annotatedClasses"> <beans:list> 
+			<beans:value>com.journaldev.model.Person</beans:value> </beans:list> </beans:property> -->
+
+		<!-- annotated source files <beans:property name="annotatedPackages"> <beans:list> 
+			<beans:value>com.company.persistence.model.package1</beans:value> <beans:value>com.company.persistence.model.package2</beans:value> 
+			</beans:list> </beans:property> -->
+
+		<!-- annotated source files <beans:property name="automaticAnnotatedPackages"> 
+			<beans:list> <beans:value>com.package.domain</beans:value> <beans:value>com.package.domain.view</beans:value> 
+			</beans:list> </beans:property> -->
+
+		<!-- annotated source files -->
+		<beans:property name="packagesToScan">
+			<beans:list>
+				<beans:value>com.dell.coe.estimation.model</beans:value>
+			</beans:list>
+		</beans:property>
+
+		<beans:property name="hibernateProperties">
+			<beans:props>
+				<beans:prop key="hibernate.dialect">${db.dialect}</beans:prop>
+
+				<beans:prop key="hibernate.show_sql">${db.show_sql}</beans:prop>
+				<beans:prop key="hibernate.format_sql">${db.format_sql}</beans:prop>
+				<beans:prop key="hibernate.hbm2ddl.auto">${db.hbm2ddl.auto}</beans:prop>
+				<beans:prop key="hibernate.max_fetch_depth">${db.max_fetch_depth}</beans:prop>
+				<beans:prop key="hibernate.jdbc.fetch_size">${db.jdbc.fetch_size}</beans:prop>
+				<beans:prop key="hibernate.jdbc.batch_size">${db.jdbc.batch_size}</beans:prop>
+				<!-- <beans:prop key="hibernate.transaction.manager_lookup_class">${db.transaction.manager_lookup_class}</beans:prop> 
+					<beans:prop key="hibernate.generate_statistics">${db.generate_statistics}</beans:prop> 
+					<beans:prop key="hibernate.cache.provider_class">${db.cache.provider_class}</beans:prop> 
+					<beans:prop key="hibernate.current_session_context_class">${db.current_session_context_class} 
+					</beans:prop> <beans:prop key="hibernate.validator.apply_to_ddl">${db.validator.apply_to_ddl}</beans:prop> 
+					<beans:prop key="hibernate.validator.autoregister_listeners">${db.validator.autoregister_listeners} 
+					</beans:prop> <beans:prop key="hibernate.cache.use_query_cache">${db.cache.use_query_cache}</beans:prop> -->
+			</beans:props>
+		</beans:property>
+	</beans:bean>
+
+
+	<beans:bean id="hibernateTransactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<beans:property name="sessionFactory" ref="sessionFactory" />
+	</beans:bean>
+
+	<beans:bean id="persistenceExceptionTranslationPostProcessor"
+		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
+</beans:beans>

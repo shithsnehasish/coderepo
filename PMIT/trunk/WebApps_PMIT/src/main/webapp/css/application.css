@@ -1,0 +1,76 @@
+    body{
+	background:#e8e8e8;
+	}
+    .bs-example{
+    	margin: 20px;
+    }
+    .success {
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+	}
+	.form-group textarea{
+	min-height:100px;
+	}
+	.page-header{
+	text-align:center;
+	}
+			.navbar-inverse .navbar-inner {
+		background-image: url("../img/top_line_bg3.png");
+		}
+		.navbar-inverse .navbar-inner {background-color:#333333;background-position: 1px -5px; filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333',endColorstr='#333333',GradientType=0);}
+		#dell-logo{margin: -4px 10px 5px 60px;display: inline-block;padding: 0 3px;background: #333;}
+		.navbar .brand{float: none; text-decoration: none; font-size: 29px;	line-height: 10px;display: inline-block;background: #333333;margin-top: 6px;margin-left: 27%;padding: 11px 6px;color: #fff;}
+		#searchText{margin-right:3%;margin-top: 6px;}
+		
+		@media (min-width: 768px) and (max-width: 980px) {
+			#dell-logo {background: none repeat scroll 0 0 #333333;display: inline-block;margin: -8px 3% -4px;padding: 0 3px;}
+			.navbar .brand {
+				font-size: 24px;
+				line-height: 10px;
+				margin-left: 10%;
+				margin-top: 0;
+				padding: 11px 6px;
+				text-decoration: none;
+			}
+			.navbar #searchText{margin-right:5%;}
+		}
+		
+		@media (min-width: 480px) and (max-width: 640px) {
+			#dell-logo {
+				background: none repeat scroll 0 0 #333333;
+				display: inline-block;
+				margin: -2% 0 0 5%;
+				padding: 0 3px;
+			}
+			.navbar .brand {
+				font-size: 20px;
+				margin-left: 5%;
+				margin-top: 0;
+				padding: 11px 6px;
+			}
+			.navbar #searchText{margin-right:15%;}
+		}
+		
+		@media (min-width: 240px) and (max-width: 479px) {
+			#dell-logo {
+				margin: -3% 40%;
+				padding: 0 3px;
+			}
+		 .form-group textarea{
+				min-height:100px;
+				}
+			.navbar .brand {
+				text-decoration: none;
+				font-size: 14px !important;
+				line-height: 15px;
+				margin: 4% 22%;
+				padding: 11px 6px;
+			}
+			.page-header h2{
+			font-size:20px !important;
+			margin-top:110px !important;
+			}
+			.navbar #searchText{margin:0 30%;}
+		}
+		

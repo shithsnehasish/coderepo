@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.3.final using JasperReports Library version 6.0.3  -->
+<!-- 2015-11-19T11:46:04 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CategorizedTechStackMain" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2d725319-d07b-4050-a6a0-0b15450d39fe">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#EEEEEE">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<leftPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+			<rightPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style mode="Opaque" backcolor="#FFFFFF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="Table_Dataset" uuid="ce993aac-9f33-4410-822a-73647a3645ca">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+		<queryString language="SQL">
+			<![CDATA[]]>
+		</queryString>
+		<field name="techVersion" class="java.lang.String">
+			<fieldDescription><![CDATA[techVersion]]></fieldDescription>
+		</field>
+		<field name="techName" class="java.lang.String">
+			<fieldDescription><![CDATA[techName]]></fieldDescription>
+		</field>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[]]>
+	</queryString>
+	<field name="techStackVOList" class="java.util.List">
+		<fieldDescription><![CDATA[techStackVOList]]></fieldDescription>
+	</field>
+	<field name="catName" class="java.lang.String">
+		<fieldDescription><![CDATA[technologyCategoryVO.catName]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="550" height="75" forecolor="#CCCCCC" uuid="039fbcde-6edd-48d1-96f2-91b6de03bdb2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="35" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Categorized Technology Stack]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="123" splitType="Stretch">
+			<frame>
+				<reportElement x="1" y="0" width="552" height="123" uuid="91a88fc8-fdb1-4821-b6c1-ae70555c72da"/>
+				<frame>
+					<reportElement mode="Opaque" x="6" y="7" width="541" height="116" forecolor="#93959E" backcolor="#FFFFFF" uuid="f9149641-b3b5-418d-90ab-464eea7eaa4b">
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<frame>
+						<reportElement mode="Opaque" x="6" y="3" width="530" height="28" backcolor="#3F4C6B" uuid="08319908-27cd-4efb-8f3a-4a10799bccbd">
+							<property name="local_mesure_unitwidth" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<property name="local_mesure_unitheight" value="pixel"/>
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						</reportElement>
+						<textField bookmarkLevel="1">
+							<reportElement x="50" y="1" width="476" height="27" forecolor="#FFFFFF" uuid="2f9ae376-7ef8-412a-a2b3-f95d24281ae2"/>
+							<textElement textAlignment="Left" verticalAlignment="Middle">
+								<font size="14" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{catName}]]></textFieldExpression>
+							<anchorNameExpression><![CDATA[$F{catName}]]></anchorNameExpression>
+						</textField>
+						<textField>
+							<reportElement x="2" y="1" width="28" height="27" forecolor="#FFFFFF" uuid="d0a4b995-8e1c-49ac-be4d-02577e12973c">
+								<property name="local_mesure_unitx" value="pixel"/>
+								<property name="com.jaspersoft.studio.unit.x" value="px"/>
+								<property name="local_mesure_unitheight" value="pixel"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<textElement textAlignment="Right" verticalAlignment="Middle">
+								<font size="14" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{REPORT_COUNT}+1+"."]]></textFieldExpression>
+						</textField>
+					</frame>
+					<componentElement>
+						<reportElement x="6" y="45" width="530" height="55" uuid="f4a6ded2-1cc5-4121-bc28-5ea39d2fe9cc"/>
+						<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+							<datasetRun subDataset="Table_Dataset" uuid="b9a042f6-e1c8-441c-b029-72b9d50dd7f9">
+								<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{techStackVOList})]]></dataSourceExpression>
+							</datasetRun>
+							<jr:column width="290" uuid="cf3dd600-3a30-4310-bf22-8d35123892e3">
+								<jr:columnHeader style="Table_CH" height="30">
+									<staticText>
+										<reportElement mode="Opaque" x="0" y="0" width="290" height="30" forecolor="#FFFFFF" backcolor="#3F4C6B" uuid="a60e7b77-0671-400d-b6d1-9f645a44af0c"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font isBold="true"/>
+										</textElement>
+										<text><![CDATA[Technology]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="30">
+									<textField isStretchWithOverflow="true">
+										<reportElement x="0" y="1" width="280" height="26" uuid="bac89937-e47e-49e4-a062-054211534b02"/>
+										<textElement textAlignment="Left" verticalAlignment="Middle">
+											<paragraph leftIndent="5" rightIndent="5"/>
+										</textElement>
+										<textFieldExpression><![CDATA[($F{techName} == null ? " " : $F{techName})]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="240" uuid="7fbeaad5-5f5f-4ccb-a770-678058262e96">
+								<jr:columnHeader style="Table_CH" height="30">
+									<staticText>
+										<reportElement mode="Opaque" x="0" y="0" width="240" height="30" forecolor="#FFFFFF" backcolor="#3F4C6B" uuid="aebacb5a-8aa7-40fc-baf8-0a1cc236cb29"/>
+										<textElement textAlignment="Center" verticalAlignment="Middle">
+											<font isBold="true"/>
+										</textElement>
+										<text><![CDATA[Version]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell style="Table_TD" height="30">
+									<textField>
+										<reportElement x="0" y="2" width="240" height="23" uuid="3d6a331f-785e-4068-8fc1-2ce9bb04385c">
+											<property name="local_mesure_unitheight" value="pixel"/>
+											<property name="com.jaspersoft.studio.unit.height" value="px"/>
+										</reportElement>
+										<textElement textAlignment="Center" verticalAlignment="Middle"/>
+										<textFieldExpression><![CDATA[($F{techVersion} == null ? " " : $F{techVersion})]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+						</jr:table>
+					</componentElement>
+				</frame>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="25">
+			<textField>
+				<reportElement x="489" y="0" width="63" height="20" uuid="c4ae9b19-e58b-4541-a96c-1cf71aa4958b"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+1]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

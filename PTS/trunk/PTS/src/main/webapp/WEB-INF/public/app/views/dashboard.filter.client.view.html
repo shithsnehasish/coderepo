@@ -1,0 +1,222 @@
+<div class="row body-area">
+
+<div class="lightbox" id="wait_lightbox">
+  <div class="row">
+    <div class="col-md-12">
+	<div class="center-block">
+      <img class="processing-img" src="img/processing1.gif">
+	 </div>
+    </div>
+  </div>
+</div>
+
+	<div class="col-md-10 report-area" ng-show="showDashboard">
+	<div id="wrapper">
+        <div class="container">
+			<div class="dashboard_filter col-md-12" >
+				<div class="row">
+					<div class="dashboard_filterDiv col-md-4">
+						<form name="myForm" class="row">
+							<div class="filters col-md-9" novalidate>
+								<select ng-model="techDetails.category" ng-change="changeTechCategory()" class="color_blue wbl-formcontrol selectcomponent filters_Select col-md-12" ng-options="tech as tech.catName for tech in techCategory">
+									<option value="">Select Technology Category</option>
+								</select>
+								<select ng-model="techDetails.name" ng-change="changeTechName()"  ng-disabled="catNameSelect" class="input_auto color_blue techNamSelect keywordInput col-md-12" ng-options="tech.techName for tech in techNames">
+									<option value="STN">Select Technology Name</option>
+								</select>
+								<!--<input type="text" id="txtInput" ng-model="techDetails.name"  typeahead-on-select="onSelect($item, $model, $label)" ng-change="changeTechName()" typeahead="tech.techName for tech in getLocation($viewValue)" typeahead-loading="loadingLocations" typeahead-no-results="noResults" class="color_blue col-xs-12 wbl-formcontrol technology_input keywordInput col-sm-12 col-lg-12 col-md-12" placeholder="Technology Keyword" required name="techName" typeahead-min-length="3"/>
+								<img ng-show="load1" class="imageLoadInput" src="img/processing.gif">
+								<div ng-show="noResults" class="color-white">
+									<i class="glyphicon glyphicon-remove color-white"></i> No Results Found
+								</div>-->
+								<select ng-model="techDetails.version" ng-disabled="techNameSelect" class="color_blue wbl-formcontrol technology_input col-md-12" ng-options="tech.techVersion for tech in techVersionArray" name="version">
+									<option value="">Select Technology Version</option>
+								</select>
+								<!--<input type="text"  class="color_blue col-xs-12 wbl-formcontrol technology_input col-sm-12 col-lg-12 col-md-12" placeholder="Version" name="version"/>-->
+							</div>
+							<div class="icon_div col-md-3 center-block">
+								<a  ng-show="disableIconDiv" href="javascript:void(0);" type="submit" class="center-block"><i class="material-icons cover">&#xE148;</i></a>
+								<a ng-show="AddIconDiv" ng-click="showViewDiv(techDetails)" href="javascript:void(0);" type="submit" class="center-block addDetails"><img src="img/add.png" alt="button_logo"/></a>
+							</div>
+						</form>
+					</div>
+					<div class="right_div col-md-8" ng-show="ViewDiv">
+						<ol id="classList" class="class-list">
+							<li class="customClass" ng-repeat="item in userDefinedDetails">{{item}}<span class="color-white glyphicon glyphicon-remove-sign delete_icon" title="Remove" ng-click="removeProjectDetails(item)"></span></li>
+						</ol>
+					</div>
+				</div>
+				<div class="col-md-12">
+						<button class="col-md-offset-10 btn btn-primary search_button" ng-show="findProjects" ng-click="searchProjects()" aria-disabled="false" >Find Projects
+							<img src="img/search.png" alt="button_logo"/></a>
+						</button>
+					</div>
+			</div>
+			
+			<!-- /Project Bar-->
+			<div class="Projects_bar col-md-12">
+					<h4 class="bar_label col-md-2"  aria-disabled="false" >Projects ({{projectsCount}})</h4>
+					<a ng-show="whiteGridIcon"  class="bar_icon pull-right" ng-click="showListDiv()"><img src="img/list.png" alt="button_logo"/></a>
+					<a ng-show="greyGridIcon"  class="bar_icon pull-right"><i class="material-icons">&#xE8EF;</i></a>
+					<a ng-show="whiteListIcon"class="bar_icon pull-right" ng-click="showGridDiv()"><img src="img/view.png" alt="button_logo"/></a>
+					<a  ng-show="greyListIcon"class="bar_icon pull-right"><i class="material-icons">&#xE8F0;</i></a>
+					
+			</div>
+			
+			<!-- /List Div-->
+			<div class="col-md-12" ng-show="listDiv">
+			<div class="color_blue col-md-12">
+				<label class="color_blue modal_text center-block text-center" ng-show="msgErr">{{msg}}</label>
+			</div>	
+			<div class="projects_div col-md-12" ng-repeat="item in projectsResult">
+				<div class="row">
+					<div class="col-md-6 project_details">
+						<div class="color_blue ProjectDetails_div col-md-12">
+							<label class="color_blue modal_text" aria-disabled="false">Project Name: </label>{{" "+item.project.projName}}
+						</div>
+						<div class="color_blue ProjectDetails_div col-md-12">
+							<label class="color_blue modal_text" aria-disabled="false">Project Type: </label> {{" "+item.project.projType}}
+						</div>
+						<div class="ProjectDetails_div col-md-2 center-block margin_top10">
+							<button class="btn btn-primary background_blue center-block" ng-click="clickModal(item.project.projectId)" aria-disabled="false" data-toggle="modal" data-target="#myModal">Details
+							</button>
+						</div>
+					</div>
+					<div class="col-md-6 listTable_Div">
+						<label class="color_blue modal_text" aria-disabled="false">Technologies </label>
+						<div class="parentTableScroll">
+							<table class="footable table">
+								<thead class="color-white background_blue">
+									<tr>
+										<tr>
+										<th>Category</th>
+										<th data-hide="phone">Name</th>
+										<th data-hide="phone">Version</th>
+									</tr>
+									</tr>
+								</thead> 
+								<tbody>
+									<tr ng-repeat="trValue in item.technologyStackVOs">
+										<td>{{trValue.technologycategory.catName}}</td>
+										<td>{{trValue.techName}}</td>
+										<td>{{trValue.techVersion}}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+			<!-- /End of List Div-->
+			
+			<!-- /Grid Div-->
+			<div class="col-md-12 center-block" ng-show="gridDiv">
+			<div class="color_blue col-md-12">
+				<label class="color_blue modal_text center-block text-center" ng-show="msgErr">{{msg}}</label>
+			</div>
+					<div class="row center-block">
+						<div class="col-md-4 center-block" ng-repeat="item in projectsResult track by $index">
+							<div class="col-md-12 gridProject_div center-block" >
+								<div class="viewIcon_div col-md-12">
+									<p class="projectDetails_title" aria-disabled="false" title="{{item.project.projName}}">{{item.project.projName| limitTo: 35 }}{{item.project.projName.length > 35 ? '...' : ''}}</p>
+								</div>
+								<div class="col-md-12">
+									<p class="text_center color_blue" aria-disabled="false" title="{{item.project.projType}}">{{item.project.projType| limitTo: 38 }}{{item.project.projType.length > 38 ? '...' : ''}}</p>
+								</div>
+								<div class="color_blue col-md-12 text_center">
+									<label class="text_center color_blue modal_text" aria-disabled="false">Name : </label> <span class="text_center color_blue modalspan_text" title="{{displayProjNam[$index]}}">{{displayProjNam[$index]| limitTo: 10 }}{{displayProjNam[$index].length > 10 ? '...' : ''}}</span> 
+								</div>
+								<div class="col-md-12 center-block margin_top10">
+									<button ng-click="clickModal(item.project.projectId)" class="btn btn-primary background_blue center-block" data-toggle="modal" data-target="#myModal" aria-disabled="false">Details
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+			<!-- /End of Grid Div-->
+			
+			<!-- /Modal Div-->		
+			<div class="col-md-12 center-block margin_top15" ng-show="totalProjects > 5 && totalProjects > projectsResult.length">
+					<button ng-click="getMoreProjects()"  ng-show="!(load2)" type="button" class="btn btn-primary btn-lg background_blue more_button center-block">More
+					</button>
+					<img ng-show="load2" class="imageLoadInput1" src="img/processing.gif">
+			</div>
+			
+				<div class="modal fade" role="dialog" id="myModal" aria-labelledby="gridSystemModalLabel">
+					 <div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header background_blue customModal_header">
+								<button type="button" class="close modal-closeIcon" data-dismiss="modal" aria-label="Close"><span class="color-white" aria-hidden="true">&times;</span></button>
+									<h4 class="modal-title color-white" id="gridSystemModalLabel">Project Details</h4>
+							</div>
+							<div class="modal-body background_silver">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="color_blue ProjectDetails_div col-md-12">
+												<label class="color_blue modal_text" aria-disabled="false">Project Name: </label>{{" " + modalDetails.projName}}
+											</div>
+											<div class="color_blue ProjectDetails_div col-md-12">
+												<label class="color_blue modal_text" aria-disabled="false">Project Type: </label>{{" "+modalDetails.projType}}
+											</div>
+											<br/>
+											<br/>
+											<br/>
+											<br/>
+											<div class="color_blue ProjectDetails_div col-md-12">
+												<label class="color_blue modal_text" aria-disabled="false">Technologies: </label>
+												<div class="parentTableScrollDetail">
+													<table class="footable table">
+														<thead class="color-white background_blue">
+															<tr>
+																<th>Category</th>
+																<th data-hide="phone">Name</th>
+																<th data-hide="phone">Version</th>
+															</tr>
+														</thead>
+														<tbody>
+															<tr ng-show="listError">
+															<!-- <td colspan="2">{{listErrorMsg}}</td> -->
+															<td colspan="3"><img class="processing-image" src="img/processing1.gif"></td>
+															</tr>
+															<tr ng-show="listErrorShowMsg">
+															<!-- <td colspan="2">{{listErrorMsg}}</td> -->
+															<td colspan="3" class="text-center">{{listErrorMsg}}</td>
+															</tr>
+															<tr ng-repeat="trValue in modalDetails.technologystack" ng-hide="listError">
+																<td>{{trValue.technologycategory.catName}}</td>
+																<td>{{trValue.techName}}</td>
+																<td>{{trValue.techVersion}}</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- <div class="modal-footer background_silver">
+								<button type="button" class="col-lg-offset-5 btn btn-lg background_blue color-white" data-dismiss="modal">Close</button>
+							</div>-->
+						</div><!-- /.modal-content -->
+					 </div><!-- /.modal-dialog -->
+				</div><!-- /.modal -->
+        </div>
+	</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(function () {
+		$('.footable').footable();
+		$('#txtInput').bind("cut copy paste",function(e) {
+			e.preventDefault();
+		});
+		$(".input_auto").select2(); 
+		$(".select2-selection__rendered").removeAttr( "title" );
+	});
+	
+</script>

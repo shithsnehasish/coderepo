@@ -1,0 +1,47 @@
+
+<nav class="navbar-fixed-top dashboard-navbar">
+	<div class="row">
+		<div class="col-md-1 logo-img">
+		<a href="app.html">
+			<img class="img-header" src="img/dell.png" alt="logo"/>
+				 </a>
+		</div>
+			
+		<div class="col-md-3">
+			<h3 class="dashboard-label col-md-12">BATS Project Dashboard</h3>
+		</div>
+			
+		<div class="col-md-1 download img-top-right">
+			<button data-toggle="modal" class="downloadButton" data-target="#myModalDownload"><img src="img/download.png" alt="button_logo"/></button>
+		</div>
+		
+		<!--<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 img-top-info">
+				<a href="mailto:webblify_uxteam@dell.com"><img src="img/information.png" alt="button_logo"/ disabled></a>
+		</div>-->
+	</div>
+	
+</nav>
+	<div class="modal fade" role="dialog"tabindex="-1" id="myModalDownload" aria-labelledby="gridSystemModalLabel">
+			<div class="modal-dialog modal-sm" role="document">
+				<div class="modal-content">
+					<div class="modal-header background_blue downloadModal_header">
+						<button type="button" class="close modal-closeIcon" data-dismiss="modal" aria-label="Close"><span class="color-white" aria-hidden="true">&times;</span></button>
+						<h3 class="modal-title color-white" id="gridSystemModalLabel">Download</h3>
+					</div>
+					<div class="modal-body background_silver">
+						<form name="downloadForm" action="printReport" novalidate>
+							<div class="container-fluid">
+								<select class="color_blue downloadSelect wbl-formcontrol filters_Select col-md-12" ng-model="projectType" name="reportType">
+									<option value="" disabled selected>Select Report Type</option>
+									<option value="project">Project Details</option>
+									<option value="category">Group By Technology Category</option>
+								</select>
+								<div class="col-md-12 center-block">
+									<button type="button" ng-click="downloadReport(projectType)" class="btn btn-primary background_blue selectcomponent center-block" data-dismiss="modal" aria-label="Close">Download</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->

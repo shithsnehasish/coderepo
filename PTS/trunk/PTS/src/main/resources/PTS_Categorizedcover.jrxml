@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.3.final using JasperReports Library version 6.0.3  -->
+<!-- 2015-10-29T10:13:29 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Wave Cover" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="c50b24eb-eb33-413f-8e75-e7e20a5341fd">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter "/>
+	<parameter name="BookTitle" class="java.lang.String">
+		<defaultValueExpression><![CDATA["Report Book Template"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="BookSubTitle" class="java.lang.String">
+		<defaultValueExpression><![CDATA["A sample template of a ReportBook"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<title>
+		<band height="841" splitType="Stretch">
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="370" width="595" height="471" uuid="7d5f399a-cbec-48b3-979b-064c0b477ca2">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA["wave.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Transparent" x="2" y="269" width="593" height="79" forecolor="#CCCCCC" backcolor="#FFFFFF" uuid="70fdc995-be98-4468-b657-f9b99c6a5c58"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="44" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Project Technology Stack]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="420" y="804" width="160" height="30" forecolor="#FFFFFF" uuid="46e1d059-caf2-49d6-9e13-a8e95c6f8790"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Dell - Internal Use - Confidential ]]></text>
+			</staticText>
+			<image>
+				<reportElement x="30" y="20" width="50" height="50" uuid="0182e921-b789-4b18-8712-36cf439998c4">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA["Dell_64.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+</jasperReport>

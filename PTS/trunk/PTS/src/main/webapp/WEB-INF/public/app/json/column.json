@@ -1,0 +1,52 @@
+[
+	{
+		"x": "Category1",
+		"y":  0,
+		"tooltip": "<table class='PykCharts'><tr><th>January</th></tr><tr><td>8</td></tr></table>"
+	},
+	{
+		"x": "Category2",
+		"y":  2,
+		"tooltip": "<table class='PykCharts'><tr><th>Feb</th></tr><tr><td>10</td></tr></table>"
+	},
+	{
+		"x": "Category3",
+		"y":  4,
+		"tooltip": "<table class='PykCharts'><tr><th>March</th></tr><tr><td>12</td></tr></table>"
+	},
+	{
+		"x": "Category4",
+		"y":  6,
+		"tooltip": "<table class='PykCharts'><tr><th>April</th></tr><tr><td>14</td></tr></table>"
+	},
+	{
+		"x": "Category5",
+		"y":  8,
+		"tooltip": "<table class='PykCharts'><tr><th>June</th></tr><tr><td>16</td></tr></table>"
+	},
+	{
+		"x": "Category6",
+		"y":  10,
+		"tooltip": "<table class='PykCharts'><tr><th>July</th></tr><tr><td>18</td></tr></table>"
+	},
+	{
+		"x": "Category7",
+		"y":  12,
+		"tooltip": "<table class='PykCharts'><tr><th>August</th></tr><tr><td>20</td></tr></table>"
+	},
+	{
+		"x": "Category8",
+		"y":  14,
+		"tooltip": "<table class='PykCharts'><tr><th>September</th></tr><tr><td>22</td></tr></table>"
+	},
+	{
+		"x": "Category9",
+		"y":  16,
+		"tooltip": "<table class='PykCharts'><tr><th>October</th></tr><tr><td>24</td></tr></table>"
+	},
+	{
+		"x": "Category10",
+		"y":  18,
+		"tooltip": "<table class='PykCharts'><tr><th>October</th></tr><tr><td>24</td></tr></table>"
+	}
+]

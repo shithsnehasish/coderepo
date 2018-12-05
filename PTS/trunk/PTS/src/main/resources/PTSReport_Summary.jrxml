@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.3.final using JasperReports Library version 6.0.3  -->
+<!-- 2015-11-19T11:52:13 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PTSReport_Summary" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" uuid="3358ddd6-c37e-4f79-8474-9e8db56eba88">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Factory DS"/>
+	<parameter name="PROJECT_COUNT" class="java.lang.Integer" isForPrompting="false">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="TECH_COUNT" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="CAT_COUNT" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="BAR_CHART_URL" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="PIE_CHART_URL" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageFooter>
+		<band height="30">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="452" y="2" width="80" height="20" uuid="5f3d7c83-6bed-4ea2-bcca-a552ae5ee869">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Bottom"/>
+				<text><![CDATA[1]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="742" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="1" y="46" width="150" height="70" forecolor="#EEEEEE" backcolor="#EEEEEE" uuid="a7bd49c7-5ce5-4c0a-b22c-8f89ae1010de">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<image>
+					<reportElement x="3" y="9" width="50" height="50" uuid="a08d597f-8888-4e16-8e62-5220e439753e"/>
+					<imageExpression><![CDATA["project.png"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="50" y="8" width="100" height="20" uuid="05ea2d3d-99f9-4afa-8141-f3af2dcf8009"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[PROJECTS]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="52" y="33" width="98" height="37" forecolor="#9E9E9E" uuid="ecac81c9-d8b8-4fe4-85e1-758a84e3f695"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{PROJECT_COUNT}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="204" y="46" width="150" height="70" forecolor="#EEEEEE" backcolor="#EEEEEE" uuid="a18cea18-4cb0-4329-ae61-a1b2d63e78fb">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<staticText>
+					<reportElement x="50" y="8" width="100" height="20" uuid="42954df8-b779-4ac1-9cee-24fb5e8120cf"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[CATEGORIES]]></text>
+				</staticText>
+				<image>
+					<reportElement x="4" y="8" width="50" height="50" uuid="d1da14c6-30f6-41b7-86cc-7c6c869104fa"/>
+					<imageExpression><![CDATA["categ.png"]]></imageExpression>
+				</image>
+				<textField>
+					<reportElement x="50" y="33" width="100" height="37" forecolor="#9E9E9E" uuid="f8bcd7c7-2582-46de-88d1-2ce2a337cb89"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{CAT_COUNT}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="405" y="46" width="150" height="70" forecolor="#EEEEEE" backcolor="#EEEEEE" uuid="53132e52-ed7a-4e7b-9426-4c1ba8ba6a89">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<staticText>
+					<reportElement x="49" y="8" width="100" height="20" uuid="908e4759-7a88-4e2f-b547-a68d79512efe"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[TECHNOLOGIES]]></text>
+				</staticText>
+				<image>
+					<reportElement x="0" y="9" width="50" height="50" uuid="29048efa-85e0-4610-b027-1b6205fdca93"/>
+					<imageExpression><![CDATA["build.png"]]></imageExpression>
+				</image>
+				<textField>
+					<reportElement x="49" y="32" width="100" height="38" forecolor="#9E9E9E" uuid="c322f64e-39ab-4be5-b153-db26703ffb42"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{TECH_COUNT}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="3" y="7" width="546" height="28" backcolor="#3F4C6B" uuid="fcde1468-ed78-44b1-808f-3acde1fc3b46">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<staticText>
+					<reportElement mode="Transparent" x="1" y="0" width="40" height="28" forecolor="#FFFFFF" uuid="8df9bfee-50a2-4d20-83d3-e4c636e279e3"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[1]]></text>
+				</staticText>
+				<textField bookmarkLevel="1">
+					<reportElement x="50" y="1" width="417" height="27" forecolor="#FFFFFF" uuid="615657b8-b4de-4e1c-8d5e-d91129939d00">
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+						<paragraph leftIndent="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Summary"]]></textFieldExpression>
+					<anchorNameExpression><![CDATA["Summary"]]></anchorNameExpression>
+				</textField>
+			</frame>
+			<image hAlign="Center">
+				<reportElement x="20" y="457" width="500" height="280" uuid="d8e25c1e-880d-4262-a052-13a2e4f3a8be">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{PIE_CHART_URL}]]></imageExpression>
+			</image>
+			<image hAlign="Center">
+				<reportElement x="26" y="140" width="494" height="290" uuid="d964ccd5-feaa-4997-9147-25f02d00e0b5">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{BAR_CHART_URL}]]></imageExpression>
+			</image>
+		</band>
+	</summary>
+</jasperReport>

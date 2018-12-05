@@ -1,0 +1,37 @@
+.wrap{
+	width:70%;
+	margin:0 auto;
+}
+.header{
+	background: #fff url(../images/login-BG.jpg) no-repeat left center; 
+    background-size: cover;
+    border: 0 none;
+    padding: 2em;
+}
+.logo{
+	float:left;
+	margin-top: -6px;
+}
+.top-nav{
+	float:right;
+}
+.top-nav ul li{
+	display:inline-block;
+	float: left;
+	border-left: 1px solid rgb(31, 132, 224);
+}
+.top-nav ul li:first-child{
+	border-left:none;
+}
+.top-nav ul li a{
+	font-family: 'Ropa Sans', sans-serif;
+	text-transform: uppercase;
+	display: block;
+}
+.top-nav ul li a:hover{
+	
+}
+.top-nav li.active> a, .top-nav li> a:hover {
+	background: rgb(50, 133, 209);
+	border-left-color:rgb(50, 133, 209);
+}
