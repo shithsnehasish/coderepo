@@ -28,7 +28,7 @@ public interface DashboardService {
 	public Dashboard addDashboard(Dashboard dashboard);
 	public Dashboard getDashBoardById(long dashboardId);
 	public List<Dashboard> getAllDashboardByClientId(List<Long> questionaireId);
-	public void deleteDashboard(long dashboardId);
+	public void deleteDashboard(long dashboardId)
 	public List<Dashboard> getDashboardByQuestionaireId(long questionaireId);
 	public void deleteDashboard(Dashboard dashboard);
 	public List<DashboardConfig> getAllDashboardConfigByDashboardId(long dashboardId);
